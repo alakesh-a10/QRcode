@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Qr Code Generetor</title>
+    </head>
+    <body>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="text" name="link" required id="link">
+           <input type="submit" name="submit"><br>
+           <p> QR code Color:</p><input type="color" name="fill" value="#000000">
+           <p> Background Color:</p><input type="color" name="back" value="#ffffff">
+
+        </form>
+<br><br>
+        {% if rou %} 
+                <img src="{% static 'rou' %}" alt="No qrcode">
+        {% endif %}
+
+    </body>
+</html>
